@@ -24,7 +24,7 @@
 }
 
 .tracer-map{
-  cursor: pointer;
+  cursor: none;
   position: absolute;
   top:0;
   z-index: 400;
