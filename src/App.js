@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path= "/maps" component={Containers.Maps}/>
-          <Route exact path= "/maps/:mapId" component={Containers.MapEditor}/>
+          <Route exact path= "/" component={Containers.Maps}/>
+          <Route exact path= "/:mapId" component={Containers.MapEditor}/>
         </Switch>
       </Router>
     </div>
