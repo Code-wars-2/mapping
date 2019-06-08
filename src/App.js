@@ -9,7 +9,7 @@ import {
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Router>
         <Switch>
           <Route exact path= "/" component={Containers.Maps}/>
