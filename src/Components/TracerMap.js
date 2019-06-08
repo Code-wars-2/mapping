@@ -100,6 +100,7 @@ class TracerMap extends Component {
         ctx.closePath()
       }
     }
+    
 
     if(this.props.trace === 'shop'){
       ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
