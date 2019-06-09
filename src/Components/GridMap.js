@@ -1,4 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+
+const mapStateToProps = (state) => {
+  return {
+    height: state.globalState.height,
+    width: state.globalState.width,
+    offset: state.globalState.offset,
+    scale: state.globalState.scale,
+    asset: state.globalState.asset,
+  };
+};
 
 class GridMap extends Component {
   constructor(props){
@@ -13,6 +24,12 @@ class GridMap extends Component {
 
   componentDidUpdate(prevProps,prevState){
     if(this.props.height !== prevProps.height){
+      this.drawBoxGrid();
+    }
+    if(this.props.width !== prevProps.width){
+      this.drawBoxGrid();
+    }
+    if(this.props.scale !== prevProps.scale){
       this.drawBoxGrid();
     }
   }
@@ -54,4 +71,6 @@ class GridMap extends Component {
   }
 }
 
-export default GridMap;
+export default connect(
+  mapStateToProps,
+)(GridMap);
