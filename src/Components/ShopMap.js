@@ -33,10 +33,10 @@ class ShopMap extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.shops && nextProps.shops !== this.props.shops) {
-      drawShops("shop-map",nextProps.shops,7,"red",);
+      drawShops("shop-map",nextProps.shops,7,"red",this.props.scale);
     }
     if(nextProps.height !== this.props.height || nextProps.width !== this.props.width){
-      drawShops("shop-map",nextProps.shops,7,"red",);
+      drawShops("shop-map",nextProps.shops,7,"red",this.props.scale);
     }
   }
 

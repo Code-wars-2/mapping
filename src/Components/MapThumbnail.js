@@ -8,7 +8,7 @@ import {
 
 class MapThumbnail extends Component {
   render() {
-    return (<Link to={`/${this.props.map.id}`}><Card>{this.props.map.id}</Card></Link>)
+    return (<Link to={`/${this.props.map.map_id}`}><Card>{this.props.map.name}</Card></Link>)
   }
 }
 

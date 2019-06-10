@@ -8,7 +8,14 @@ const initialStore = {
   scale: 20,
   asset : 'road',
   roads: [],
-  shops: []
+  shops: [],
+  navPoints: [],
+  navigation: {
+    x1: null,
+    x2: null,
+    y1: null,
+    y2: null
+  }
 };
 
 const globalState = (state = initialStore, action) => {

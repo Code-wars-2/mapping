@@ -11,8 +11,11 @@ import {
   resizeWindow
 } from '../Redux/Actions/Window';
 import {
-  changeAsset
+  changeAsset,
+  addMapAssets
 } from '../Redux/Actions/Map';
+import axios from 'axios';
+import * as ROUTES from '../Config/Routes';
 
 const mapStateToProps = (state) => {
   return {
@@ -23,7 +26,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     resizeWindow: (data) => dispatch(resizeWindow(data)),
-    changeAsset: (data) => dispatch(changeAsset(data))
+    changeAsset: (data) => dispatch(changeAsset(data)),
+    addMapAssets: (data) => dispatch(addMapAssets(data))
   };
 };
 
@@ -38,7 +42,20 @@ class MapEditor extends Component {
 
   componentDidMount(){
     this.getCanvasSize();
-    window.addEventListener('resize',this.getCanvasSize)
+    this.getMapAssets()
+    //window.addEventListener('resize',this.getCanvasSize)
+  }
+
+  getMapAssets = () => {
+    let id=this.props.match.params.mapId;
+    axios.get(ROUTES.GET_MAP_ASSETS(id))
+    .then(response => {
+      console.log(response.data)
+      this.props.addMapAssets(response.data)
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
   getCanvasSize = () => {
@@ -75,9 +92,21 @@ class MapEditor extends Component {
           >
             Shop
           </Button>
+          <Button 
+            style={this.props.asset === 'navigate' ? {
+              backgroundColor:"#1890ff",
+              borderColor:"#1890ff",
+              color:"#fff"
+            } : null} 
+            block 
+            onClick={()=>this.props.changeAsset('navigate')}
+          >
+            Navigate
+          </Button>
         </Col>
         <Col span={20} className="map-container">
-          <Canvas.TracerMap/>
+          <Canvas.TracerMap mapId={this.props.match.params.mapId}/>
+          <Canvas.NavigationMap/>
           <Canvas.ShopMap/>
           <Canvas.RoadMap/>
           <Canvas.GridMap/>

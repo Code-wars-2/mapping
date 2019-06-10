@@ -6,6 +6,14 @@ export const changeAsset = (data) => {
   }
 }
 
+export const addMapAssets = (data) => {
+  let payload = data
+  return {
+    type: "ADD_MAP_ASSETS",
+    payload
+  }
+}
+
 export const addRoad = (data) => {
   let payload = data
   return {
@@ -32,4 +40,26 @@ export const removeShop = () => {
   return {
     type: "REMOVE_SHOP",
   }
+}
+
+export const addNavigation = (data) => {
+  let payload = data
+  return {
+    type: "ADD_NAVIGATION",
+    payload
+  } 
+}
+
+export const navigateMap = (data) => {
+  let payload = data
+  return {
+    type: "NAVIGATE_MAP",
+    payload
+  } 
+}
+
+export const removeNavigation = () => {
+  return {
+    type: "REMOVE_NAVIGATION"
+  } 
 }

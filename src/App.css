@@ -31,9 +31,17 @@
   border: 1px solid #efefef;
 }
 
+.navigation-map{
+  cursor: none;
+  position: absolute;
+  top:0;
+  z-index: 380;
+  border: 1px solid #efefef;
+}
+
 .hover-coords{
   position: absolute;
-  height:50px;
+  height:auto;
   width:auto;
   padding: 5px;
   z-index: 999;
