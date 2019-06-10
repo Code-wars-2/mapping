@@ -29,11 +29,11 @@ class NavigationMap extends Component {
 
   componentWillReceiveProps(nextProps){
     if(nextProps && this.props.navigation !== nextProps.navigation){
-      drawNavPoints("navigation-map",nextProps.navigation,7,"#336ac4",this.props.scale);
+      drawNavPoints("navigation-map",nextProps.navigation,10,"#336ac4",this.props.scale);
     }
     if(nextProps && this.props.navPoints !== nextProps.navPoints){
       console.log(nextProps.navPoints)
-      drawNavigation("navigation-map",nextProps.navPoints,7,"#336ac4","round",this.props.scale);
+      drawNavigation("navigation-map",nextProps.navPoints,10,"#336ac4","round",this.props.scale);
     }
   }
 

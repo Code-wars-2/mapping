@@ -39,7 +39,7 @@ class RoadMap extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.roads && nextProps.roads !== this.props.roads) {
-      drawRoads("road-map",nextProps.roads,7,"#565656","round",this.props.scale);
+      drawRoads("road-map",nextProps.roads,10,"#565656","round",this.props.scale);
     }
   }
 

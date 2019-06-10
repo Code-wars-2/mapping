@@ -177,31 +177,31 @@ class TracerMap extends Component {
       if(!this.state.x1 && !this.state.y1 && !this.state.x2 && !this.state.y2){
         let x = e.clientX - this.props.offset - 1;
         let y = e.clientY - 1;
-        pointTracer("tracer-map",x,y,7,"#565656",this.props.scale)
+        pointTracer("tracer-map",x,y,10,"#565656",this.props.scale)
       }
       if(this.state.x1 && this.state.y1 && !this.state.x2 && !this.state.y2){
         let x1 = this.state.x1;
         let y1 = this.state.y1;
         let x2 = e.clientX - this.props.offset - 1;
         let y2 = e.clientY - 1;
-        lineTracer("tracer-map",x1,y1,x2,y2,7,"#565656","round",this.props.scale)
+        lineTracer("tracer-map",x1,y1,x2,y2,10,"#565656","round",this.props.scale)
       }
     }
     if(this.props.asset === 'shop'){
       let x = e.clientX - this.props.offset - 1;
       let y = e.clientY - 1;
-      pointTracer("tracer-map",x,y,7,"red",this.props.scale)
+      pointTracer("tracer-map",x,y,10,"red",this.props.scale)
     }
     if(this.props.asset === 'navigate'){
       if(!this.state.navX1 && !this.state.navY2 && !this.state.navX2 && !this.state.navY2){
         let x = e.clientX - this.props.offset - 1;
         let y = e.clientY - 1;
-        pointTracer("tracer-map",x,y,7,"#336ac4",this.props.scale)
+        pointTracer("tracer-map",x,y,10,"#336ac4",this.props.scale)
       }
       if(this.state.navX1 && this.state.navY1 && !this.state.navX2 && !this.state.navY2){
         let x2 = e.clientX - this.props.offset - 1;
         let y2 = e.clientY - 1;
-        pointTracer("tracer-map",x2,y2,7,"#336ac4",this.props.scale)
+        pointTracer("tracer-map",x2,y2,10,"#336ac4",this.props.scale)
       }
     }
   }
