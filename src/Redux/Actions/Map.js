@@ -14,11 +14,22 @@ export const addRoad = (data) => {
   }
 }
 
+export const removeRoad = () => {
+  return {
+    type: "REMOVE_ROAD",
+  }
+}
 
 export const addShop = (data) => {
   let payload = data
   return {
     type: "ADD_SHOP",
     payload
+  }
+}
+
+export const removeShop = () => {
+  return {
+    type: "REMOVE_SHOP",
   }
 }

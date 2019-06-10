@@ -21,11 +21,21 @@ class ShopMap extends Component {
   }
 
   componentDidMount(){
+    document.getElementById("tracer-map").addEventListener('keydown',this.undoPoint);
+  }
 
+  undoPoint = (e) => {
+    e.preventDefault();
+    if(e.keyCode === 90 && (e.metaKey||e.ctrlKey)){
+      
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.shops && nextProps.shops !== this.props.shops) {
+      drawShops("shop-map",nextProps.shops,7,"red",);
+    }
+    if(nextProps.height !== this.props.height || nextProps.width !== this.props.width){
       drawShops("shop-map",nextProps.shops,7,"red",);
     }
   }

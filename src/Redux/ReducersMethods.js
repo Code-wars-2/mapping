@@ -25,9 +25,27 @@ REDUX_FUNCTION['ADD_ROAD'] = (state, action) => {
   }
 }
 
+REDUX_FUNCTION['REMOVE_ROAD'] = (state, action) => { 
+  let roads = JSON.parse(JSON.stringify(state.roads));
+  roads.pop()
+  return {
+    ...state,
+    roads
+  }
+}
+
 REDUX_FUNCTION['ADD_SHOP'] = (state, action) => { 
   let shops = JSON.parse(JSON.stringify(state.shops));
   shops.push(action.payload)
+  return {
+    ...state,
+    shops
+  }
+}
+
+REDUX_FUNCTION['REMOVE_SHOP'] = (state, action) => { 
+  let shops = JSON.parse(JSON.stringify(state.roads));
+  shops.pop()
   return {
     ...state,
     shops
